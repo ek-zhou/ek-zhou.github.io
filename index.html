@@ -124,7 +124,7 @@
 
     .layout {
       display: grid;
-      grid-template-columns: 0.65fr 2px 2fr;
+      grid-template-columns: 1fr 2px 1.8fr;
       flex: 1;
       overflow: hidden;
     }
@@ -133,17 +133,17 @@
 
     /* LEFT PANEL */
     .left {
-      padding: 0.8rem 1.2vw;
+      padding: 1rem 2vw;
       animation: fadeUp 1s ease 0.2s both;
       overflow-y: auto;
     }
 
     .avatar-wrap {
-      width: 70px; height: 70px;
+      width: 90px; height: 90px;
       border-radius: 50%;
       background: linear-gradient(135deg, #4a7fd4, #001f4d);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       position: relative;
       overflow: hidden;
     }
@@ -154,20 +154,20 @@
       border: 1px solid rgba(0,0,0,0.1);
     }
     .avatar-initials {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       font-weight: 300;
       color: #fff;
       letter-spacing: 0.05em;
     }
 
-    .section { margin-bottom: 0.9rem; }
+    .section { margin-bottom: 1.1rem; }
     .section-label {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.68rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -183,24 +183,24 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      margin-bottom: 0.35rem;
-      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
       color: var(--ink);
     }
-    .contact-item svg { width: 13px; height: 13px; stroke: var(--muted); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+    .contact-item svg { width: 14px; height: 14px; stroke: var(--muted); fill: none; stroke-width: 1.5; flex-shrink: 0; }
     .contact-item a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color 0.2s; }
     .contact-item a:hover { border-color: var(--accent); color: var(--accent); }
 
     .skill-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.3rem;
+      gap: 0.35rem;
     }
     .skill-tag {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 0.68rem;
+      font-size: 0.75rem;
       letter-spacing: 0.06em;
-      padding: 0.2rem 0.55rem;
+      padding: 0.25rem 0.6rem;
       border: 1px solid var(--line);
       color: var(--muted);
       transition: all 0.2s;
