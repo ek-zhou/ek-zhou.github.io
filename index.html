@@ -287,47 +287,77 @@
     }
     .footer-lock svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2; }
 
-    .project-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
+    .timeline {
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.28rem;
+      top: 0.4rem;
+      bottom: 0.4rem;
+      width: 1px;
+      background: var(--line);
+    }
+    .tl-item {
+      position: relative;
       margin-bottom: 0.9rem;
-      padding: 0.8rem 1rem;
-      border: 1px solid var(--line);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      padding-left: 0.8rem;
     }
-    .project-item:hover {
-      border-color: var(--accent);
-      box-shadow: 0 2px 8px rgba(0,57,166,0.08);
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -1.12rem;
+      top: 0.38rem;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px var(--accent);
     }
-    .project-name {
-      font-size: 0.9rem;
-      font-weight: 500;
+    .tl-year {
+      font-size: 0.6rem;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+    .tl-name {
+      font-size: 0.88rem;
+      font-weight: 600;
       color: var(--ink);
+      margin-bottom: 0.2rem;
     }
-    .project-desc {
-      font-size: 0.78rem;
+    .tl-desc {
+      font-size: 0.75rem;
       color: var(--muted);
       line-height: 1.5;
+      margin-bottom: 0.2rem;
+    }
+    .tl-tags {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.07em;
     }
     .project-link {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
       text-decoration: none;
-      margin-top: 0.3rem;
       border-bottom: 1px solid var(--line);
       padding-bottom: 0.1rem;
       width: fit-content;
       transition: border-color 0.2s;
     }
     .project-link:hover { border-color: var(--accent); }
-    .project-link svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .project-link svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2; }
     @keyframes fadeUp   { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
     @media (max-width: 700px) {
@@ -465,35 +495,42 @@
 
       <div class="section">
         <div class="section-label">Projects</div>
+        <div class="timeline">
 
-        <div class="project-item">
-          <div class="project-name">Google Opal App <span style="font-size:0.65rem; color:var(--muted); font-weight:400;">· 2026</span></div>
-          <div class="project-desc">An interactive application built with Google Opal.</div>
-          <a class="project-link" href="https://opal.google/app/1Zq1k9OcO5IzmIbL-BgQvziDUQkWPL3_3" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View Project
-          </a>
-        </div>
+          <div class="tl-item">
+            <div class="tl-year">2026</div>
+            <div class="tl-name">Google Opal App</div>
+            <div class="tl-desc">An interactive application built with Google Opal.</div>
+            <a class="project-link" href="https://opal.google/app/1Zq1k9OcO5IzmIbL-BgQvziDUQkWPL3_3" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Project
+            </a>
+          </div>
 
-        <div class="project-item">
-          <div class="project-name">Ads Sentiment & Sponsorship Insights <span style="font-size:0.65rem; color:var(--muted); font-weight:400;">· 2024</span></div>
-          <div class="project-desc">Serverless data pipeline using AWS Lambda, S3, and Redshift to ingest and transform YouTube comment data. Built automated sentiment analysis (VADER) and sponsorship detection workflows exposed via REST API.</div>
-          <span style="font-size:0.65rem; color:var(--muted); letter-spacing:0.08em;">VADER · Lambda · Redshift · API</span>
-        </div>
+          <div class="tl-item">
+            <div class="tl-year">2024</div>
+            <div class="tl-name">Ads Sentiment & Sponsorship Insights</div>
+            <div class="tl-desc">Serverless data pipeline using AWS Lambda, S3, and Redshift to ingest and transform YouTube comment data. Built automated sentiment analysis (VADER) and sponsorship detection workflows exposed via REST API.</div>
+            <div class="tl-tags">VADER · Lambda · Redshift · API</div>
+          </div>
 
-        <div class="project-item">
-          <div class="project-name">Capital Bikeshare Demands Analysis <span style="font-size:0.65rem; color:var(--muted); font-weight:400;">· 2019</span></div>
-          <div class="project-desc">Created linear regression models to determine bikeshare demand through exploratory data analysis and hypothesis testing.</div>
-          <span style="font-size:0.65rem; color:var(--muted); letter-spacing:0.08em;">R · EDA · Hypothesis Testing</span>
-        </div>
+          <div class="tl-item">
+            <div class="tl-year">2019</div>
+            <div class="tl-name">Capital Bikeshare Demands Analysis</div>
+            <div class="tl-desc">Created linear regression models to determine bikeshare demand through exploratory data analysis and hypothesis testing.</div>
+            <div class="tl-tags">R · EDA · Hypothesis Testing</div>
+          </div>
 
-        <div class="project-item">
-          <div class="project-name">Cetus3D — Kickstarter Launch <span style="font-size:0.65rem; color:var(--muted); font-weight:400;">· 2015–2019</span></div>
-          <div class="project-desc">Co-led the Kickstarter campaign for the Cetus 3D printer at Beijing Tiertime Technology. Managed community feedback and project workflows to raise $169K from 500+ backers, successfully transitioning the product into a permanent collection.</div>
-          <a class="project-link" href="https://www.kickstarter.com/projects/cetus/cetus3d-at-199-get-all-you-need-to-start-3d-printi" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View on Kickstarter
-          </a>
+          <div class="tl-item">
+            <div class="tl-year">2015 – 2019</div>
+            <div class="tl-name">Cetus3D — Kickstarter Launch</div>
+            <div class="tl-desc">Co-led the Kickstarter campaign for the Cetus 3D printer at Beijing Tiertime Technology. Raised $169K from 500+ backers, transitioning the product into a permanent collection.</div>
+            <a class="project-link" href="https://www.kickstarter.com/projects/cetus/cetus3d-at-199-get-all-you-need-to-start-3d-printi" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View on Kickstarter
+            </a>
+          </div>
+
         </div>
       </div>
 
